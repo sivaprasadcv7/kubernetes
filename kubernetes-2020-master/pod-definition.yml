@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache
+  #namespace: dev
+  labels:
+    app: myapp
+    tier: frontend
+    environment: dev
+spec:
+  containers:
+    - name: myapache
+      image: httpd
+
+

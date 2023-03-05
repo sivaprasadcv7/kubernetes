@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache
+  labels:
+    app: myapp1
+    type: frontend
+
+spec:
+  containers:
+    - name: myapache
+      image: aamirs/aamirweb

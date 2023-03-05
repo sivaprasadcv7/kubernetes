@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: dev
+  labels:
+    app: myapp
+    tier: frontend
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: mywebserver
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: mywebserver
+          image: aamirs/radical-nov-2022:1.0
+          command: [ "/usr/sbin/httpd", "-D", "FOREGROUND" ]
+               
+  selector:
+    matchLabels:
+      app: myapp
